@@ -1,7 +1,9 @@
 import requests
+import csv
 
 from bs4 import BeautifulSoup
 from prettytable import PrettyTable
+from datetime import datetime
 
 
 class SimpleCrawler:
@@ -31,6 +33,20 @@ class SimpleCrawler:
 
     def save_csv(self) -> None:
         print("save_csv")
+
+        columns = list(self.site_structured_data[0].keys())
+        file_name = str(datetime.now().timestamp()).replace(".", "") + ".csv"
+
+        try:
+            with open(file_name, 'w') as csv_file:
+                writer = csv.DictWriter(csv_file, fieldnames=columns)
+                writer.writeheader()
+
+                for data in self.site_structured_data:
+                    writer.writerow(data)
+
+        except IOError:
+            print("I/O error")
 
     def save_json(self) -> None:
         print("save_json")
