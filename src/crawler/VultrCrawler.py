@@ -2,6 +2,7 @@ import re
 
 from src.crawler.crawler import SimpleCrawler
 
+
 class VultrCrawler(SimpleCrawler):
     # Constructor
     def __init__(self):
