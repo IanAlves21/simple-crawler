@@ -1,5 +1,6 @@
 from src.crawler.crawler import SimpleCrawler
 
+
 class HostgatorCrawler(SimpleCrawler):
     # Constructor
     def __init__(self):

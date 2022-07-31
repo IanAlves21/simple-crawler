@@ -11,6 +11,7 @@ class SimpleCrawler:
     # Constructor
     def __init__(self, url: str):
         print("initializing")
+
         self.url = url
         self.site_raw_data = self.__request_data()
         self.site_structured_data = dict()
@@ -61,10 +62,10 @@ class SimpleCrawler:
         except IOError:
             print("I/O error")
 
-
     # Private methods
     def __request_data(self) -> BeautifulSoup:
         print("request_for_data")
+
         html = requests.get(self.url)
         soup_element = BeautifulSoup(html.content, 'html.parser')
 
