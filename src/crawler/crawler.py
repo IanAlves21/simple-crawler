@@ -14,6 +14,7 @@ class SimpleCrawler:
     # Public methods
     def print(self) -> None:
         print("print")
+        print(self.site_structured_data)
 
     def save_csv(self) -> None:
         print("save_csv")
