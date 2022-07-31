@@ -1,5 +1,6 @@
 import requests
 import csv
+import json
 
 from bs4 import BeautifulSoup
 from prettytable import PrettyTable
@@ -50,6 +51,16 @@ class SimpleCrawler:
 
     def save_json(self) -> None:
         print("save_json")
+
+        file_name = str(datetime.now().timestamp()).replace(".", "") + ".json"
+
+        try:
+            with open(file_name, "w") as json_file:
+                json.dump(self.site_structured_data, json_file, indent=4)
+                
+        except IOError:
+            print("I/O error")
+
 
     # Private methods
     def __request_data(self) -> BeautifulSoup:
