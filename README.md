@@ -30,7 +30,7 @@ The project proposes a challenge of mining data in some web pages using the Pyth
 
 ## Setup
 
-### This section explains the necessary steps to execute de projet and test it locally so verify all the ouput data and test other requirements
+### This section explains the necessary steps to execute de projet and test it locally to verify all the ouput data and test other requirements
 
 1. Clone the repository
     - To clone the repository run the code `git clone https://github.com/IanAlves21/simple-crawler.git`.
@@ -44,7 +44,7 @@ The project proposes a challenge of mining data in some web pages using the Pyth
 
 ~~~python
 from src.crawler.hostgatorCrawler import HostgatorCrawler
-from crawler.vultrCrawler import VultrCrawler
+from src.crawler.VultrCrawler import VultrCrawler
 
 h = HostgatorCrawler()
 
